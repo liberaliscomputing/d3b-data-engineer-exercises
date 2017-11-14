@@ -117,20 +117,14 @@ class Solution(object):
 
 			if not node: continue
 
-			if data[i]:
-				node.left = Node(data[i])
-				queue.append(node.left)
-			else: 
-				node.left = None
-				queue.append(None)
+			val = data[i]
+			node.left = Node(val) if val else None
+			queue.append(node.left)
 			i += 1
 
-			if data[i]:
-				node.right = Node(data[i])
-				queue.append(node.right)
-			else: 
-				node.right = None
-				queue.append(None)
+			val = data[i]
+			node.right = Node(val) if val else None
+			queue.append(node.right)
 			i += 1
 
 		return root_node
@@ -195,7 +189,7 @@ Provide the counts of patients by gender.
 	# Prints [('', 1), ('F', 3484), ('M', 1800)]
 ```
 
-## Data Exercise 2
+### Data Exercise 2
 
 Count patients in the database diagnosed with DERMATITIS at an encounter.
 
@@ -216,7 +210,7 @@ Count patients in the database diagnosed with DERMATITIS at an encounter.
 	# Prints 131
 ```
 
-## Data Exercise 3
+### Data Exercise 3
 
 Provide a list patients, by MRN, who have had a CD4 count of less than 300.
 
@@ -237,7 +231,7 @@ Provide a list patients, by MRN, who have had a CD4 count of less than 300.
 	# Prints [('MRN003396',), ('MRN000574',), ('MRN003353',), ... ]
 ```
 
-## Data Exercise 4
+### Data Exercise 4
 
 Count all female patients above the age of 30 in the database as of today’s date
 
@@ -258,7 +252,7 @@ Count all female patients above the age of 30 in the database as of today’s da
 	# Prints 2,852
 ```
 
-## Bonus Data Exercise
+### Bonus Data Exercise
 
 Describe any potential concerns with either the data itself or the design of the database.
 
