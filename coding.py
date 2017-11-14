@@ -75,7 +75,7 @@ class Solution(object):
 			deserial_tree : A root node object of binary tree
 		'''
 		if not data: return
-		
+
 		root_node = Node(data[0])
 		queue = [root_node]
 
@@ -85,20 +85,14 @@ class Solution(object):
 
 			if not node: continue
 
-			if data[i]:
-				node.left = Node(data[i])
-				queue.append(node.left)
-			else: 
-				node.left = None
-				queue.append(None)
+			val = data[i]
+			node.left = Node(val) if val else None
+			queue.append(node.left)
 			i += 1
 
-			if data[i]:
-				node.right = Node(data[i])
-				queue.append(node.right)
-			else: 
-				node.right = None
-				queue.append(None)
+			val = data[i]
+			node.right = Node(val) if val else None
+			queue.append(node.right)
 			i += 1
 
 		return root_node
